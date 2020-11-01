@@ -110,12 +110,10 @@ const initialData = `293.0,315.7792541954257,0
 function App() {
     const [lastMessage, setLastMessage] = useState<string[][]>([]);
     const messageCallback = useMemo(
-        () => (message: MessageEvent) => {
-            const arr = message.data.split('\n');
-            arr.shift();
-            const items: string[][] = arr.map((line: string) =>
-                line.split(',')
-            );
+        () => async (message: MessageEvent) => {
+            const text = await message.data.text();
+            console.log(text);
+            const items = JSON.parse(text);
             setLastMessage(items);
         },
         []
