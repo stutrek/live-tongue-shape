@@ -1,42 +1,41 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { useMachine } from 'idaho/react';
-import { machine, StateReturns } from './machine';
+import React, { SyntheticEvent, useEffect, useMemo, useState } from 'react';
+import './App.css';
+
 import { Selector } from './pages/selector';
 import { Capture } from './pages/capture';
 import { Images } from './pages/images';
 import { VideoUI } from './pages/video';
 
-function App() {
-    const [stateName, state] = useMachine(machine);
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-    type typeChanger = typeof machine['states'][typeof stateName];
-
-    switch (stateName) {
-        case 'select':
-            return (
-                <Selector
-                    stateChanger={(state as unknown) as StateReturns['select']}
-                />
-            );
-        // case 'media':
-        //     return (
-        //         <Capture
-        //             stateChanger={(state as unknown) as StateReturns['media']}
-        //         />
-        //     );
-        case 'folder':
-            return (
-                <Images
-                    stateChanger={(state as unknown) as StateReturns['folder']}
-                />
-            );
-        // case 'video':
-        //     return (
-        //         <VideoUI
-        //             stateChanger={(state as unknown) as StateReturns['video']}
-        //         />
-        //     );
+const handleClick = (event: SyntheticEvent) => {
+    if (event.target instanceof HTMLAnchorElement) {
+        if (event.target.href.startsWith('/')) {
+            history.pushState(null, '', event.target.href); // eslint-disable-line
+            event.preventDefault();
+        }
     }
-}
+};
 
-export default App;
+export function App() {
+    return (
+        <Router>
+            <div onClick={handleClick}>
+                <Switch>
+                    <Route path="/capture">
+                        <Capture />
+                    </Route>
+                    <Route path="/images">
+                        <Images />
+                    </Route>{' '}
+                    <Route path="/video">
+                        <VideoUI />
+                    </Route>
+                    <Route path="/">
+                        <Selector />
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
+    );
+}

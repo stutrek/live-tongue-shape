@@ -1,6 +1,5 @@
 import { triggerAsyncId } from 'async_hooks';
 import React, { useEffect, useMemo, useState } from 'react';
-import './App.css';
 import { useMediaStream } from '../../hooks/useMediaStream';
 import { useSocket } from '../../hooks/useSocket';
 
