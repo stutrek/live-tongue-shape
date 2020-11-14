@@ -1,5 +1,6 @@
 import React from 'react';
+import { Page } from '../../components/Page';
 
 export const VideoUI = () => {
-    return <div>Video!</div>;
+    return <Page title="Video">Video</Page>;
 };

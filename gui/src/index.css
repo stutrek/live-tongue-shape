@@ -11,17 +11,3 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
 }
-
-/* EUI overrides */
-
-html {
-    background-color: white;
-}
-
-.euiPage {
-    background-color: white;
-}
-
-.euiPanel {
-    border: none;
-}
