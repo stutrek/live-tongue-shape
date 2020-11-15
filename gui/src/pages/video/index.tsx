@@ -1,6 +1,10 @@
 import React from 'react';
 import { Page } from '../../components/Page';
 
-export const VideoUI = () => {
+type Props = {
+    handle: FileSystemFileHandle;
+};
+
+export const VideoUI = (props: Props) => {
     return <Page title="Video">Video</Page>;
 };
