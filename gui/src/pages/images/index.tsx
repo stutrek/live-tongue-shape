@@ -8,7 +8,13 @@ type Props = {
 };
 
 export const Images = (props: Props) => {
-    useImageStore(props.handle);
+    const [store, modifiers] = useImageStore(props.handle);
 
-    return <Page title="Image Folder">hi</Page>;
+    return (
+        <Page title="Image Folder">
+            {store.images.map((url) => (
+                <img src={url} key={url} />
+            ))}
+        </Page>
+    );
 };
