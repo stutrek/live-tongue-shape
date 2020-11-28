@@ -1763,6 +1763,11 @@
   dependencies:
     source-map "^0.6.1"
 
+"@types/uuid@^8.3.0":
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.0.tgz#215c231dff736d5ba92410e6d602050cce7e273f"
+  integrity sha512-eQ9qFW/fhfGJF8WKHGEHZEyVWfZxrT+6CLIJGBcZPfxUh/+BnEj+UCGYMlr9qZuX/2AltsvwrGqp0LhEW8D0zQ==
+
 "@types/webpack-sources@*":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/webpack-sources/-/webpack-sources-2.0.0.tgz#08216ab9be2be2e1499beaebc4d469cec81e82a7"
@@ -3981,6 +3986,16 @@ detect-port-alt@1.1.6:
   dependencies:
     address "^1.0.1"
     debug "^2.6.0"
+
+dexie-react-hooks@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/dexie-react-hooks/-/dexie-react-hooks-1.0.2.tgz#17f596b3d4d105b906b2afdee47e2bf8f4a4bf44"
+  integrity sha512-Omue1blFsPza0z+qBwib8MZPqcJ1tN9ogw2P3lOr2HOivnFDxd5TJPAVrq3wZZfRFly+fG3Vb4wNS/izNmgcjA==
+
+dexie@>=3.1.0-alpha.1:
+  version "3.1.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/dexie/-/dexie-3.1.0-alpha.4.tgz#d8d72f1ff55e881a57b4a19038b701cc131eb0df"
+  integrity sha512-HprTxMb+KL8GuqCOm9wAl5xaS58EAhDx2lLW1BMEsJImyNzCY8CuP3Gl/b1kKbU4gjyv9iPTGkIYFoS/dn62Sg==
 
 diff-sequences@^26.5.0:
   version "26.5.0"
@@ -11056,7 +11071,7 @@ uuid@^3.3.2, uuid@^3.4.0:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
-uuid@^8.3.0:
+uuid@^8.3.0, uuid@^8.3.1:
   version "8.3.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.1.tgz#2ba2e6ca000da60fce5a196954ab241131e05a31"
   integrity sha512-FOmRr+FmWEIG8uhZv6C2bTgEVXsHk08kE7mPlrBbEe+c3r9pjceVPgupIfNIhc4yx55H69OXANrUaSuu9eInKg==
