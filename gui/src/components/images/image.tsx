@@ -24,11 +24,12 @@ export const Image = (props: Props) => {
         return (
             <div className={styles.row}>
                 <img src={url} alt="" />
+
                 {frame.analysis ? (
                     <svg height="480px" width="640px" viewBox="0 0 640 480">
                         <path
                             strokeWidth="3"
-                            stroke="black"
+                            stroke="red"
                             fill="none"
                             d={`M ${frame.analysis
                                 .map((item) => [item[0], item[1]].join(','))
@@ -36,8 +37,12 @@ export const Image = (props: Props) => {
                         />
                     </svg>
                 ) : (
-                    'awaiting analysis'
+                    <div className={styles.awaitingAnalysis}>
+                        awaiting analysis
+                    </div>
                 )}
+
+                <div className={styles.content}>{frame.filename}</div>
             </div>
         );
     }

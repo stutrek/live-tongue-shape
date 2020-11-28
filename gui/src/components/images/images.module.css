@@ -3,9 +3,28 @@
     padding: 10px;
     border-bottom: 1px solid silver;
     display: flex;
+    position: relative;
+}
+.row .content {
+    margin-left: 10px;
 }
 
-.row img,
-.row svg {
+.row img {
     height: 100%;
+}
+
+.row svg {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    width: 305px;
+    height: 229px;
+}
+
+.row .awaitingAnalysis {
+    position: absolute;
+    top: 110;
+    left: 50;
+    color: red;
 }
