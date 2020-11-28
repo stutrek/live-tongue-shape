@@ -35,7 +35,7 @@ export const Images = (props: Props) => {
     return (
         <div>
             {frames.map((frame) => (
-                <Image handle={frame.handle} key={frame.id} />
+                <Image frame={frame} key={frame.id} />
             ))}
         </div>
     );

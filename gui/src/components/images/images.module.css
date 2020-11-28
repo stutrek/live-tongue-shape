@@ -1,0 +1,11 @@
+.row {
+    height: 250px;
+    padding: 10px;
+    border-bottom: 1px solid silver;
+    display: flex;
+}
+
+.row img,
+.row svg {
+    height: 100%;
+}
