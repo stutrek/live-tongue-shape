@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Frame } from '../../data/types';
 
 import styles from './images.module.css';
+import { useImageUrl } from './useImageUrl';
 
 type Props = {
     frame: Frame;
@@ -11,14 +12,7 @@ type Props = {
 export const Image = (props: Props) => {
     const { frame } = props;
 
-    const [url, setUrl] = useState<string | undefined>();
-
-    useEffect(() => {
-        frame.handle.getFile().then((blob) => {
-            const url = URL.createObjectURL(blob);
-            setUrl(url);
-        });
-    }, [frame.handle]);
+    const url = useImageUrl(frame);
 
     if (url) {
         return (

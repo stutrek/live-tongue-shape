@@ -32,7 +32,7 @@ type SocketEventMap = {
 };
 
 function processResult(string: string) {
-    const rows = string.split('\n');
+    const rows = string.trim().split('\n');
     rows.shift();
     return rows.map((row: string) =>
         row.split(',').map((number: string) => Number(number))

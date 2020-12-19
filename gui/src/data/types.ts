@@ -1,17 +1,24 @@
-export type FolderSource = {
+type BaseSource = {
     id: string;
-    handle: FileSystemDirectoryHandle;
-    type: 'image-folder';
     title: string;
     dateAdded: Date;
+    shareable?: boolean;
+    cropLocation?: {
+        top: number;
+        left: number;
+        width: number;
+        height: number;
+    };
 };
 
-export type VideoSource = {
-    id: string;
+export type FolderSource = BaseSource & {
+    handle: FileSystemDirectoryHandle;
+    type: 'image-folder';
+};
+
+export type VideoSource = BaseSource & {
     handle: FileSystemFileHandle;
     type: 'video';
-    title: string;
-    dateAdded: Date;
 };
 
 export type Source = FolderSource | VideoSource;
